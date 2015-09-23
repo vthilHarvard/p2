@@ -33,13 +33,12 @@ ini_set('display_errors', 1);
 	<?php
 		if (strlen($password_string) > 0)
 		{
-			echo "Word count was ", $word_count," \r\n";
-			echo "\r\n";
+			echo "Word count was ", $word_count," <br />";
 			echo "Special characer was ",($special_char == TRUE) ? 'set.': 'not set.';
-			echo "\r\nPassword is ".$password_string;
+			echo "<h2>Your new password is ".$password_string."</h2>";
 		}
 		else {
-			echo 'Password is not set';
+			echo '<h2>Password is not created yet.</h2>';
 		}
 
 	?>
