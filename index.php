@@ -8,12 +8,14 @@ ini_set('display_errors', 1);
 <head>
 	<title>XKCD password generator</title>
 	<?php require 'logic.php'; ?>
+	<link rel="stylesheet" href="custom.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 
 	<h1>XKCD Password Generator</h1>
-
-	<form method='POST' action='index.php'>
+	<a href="https://commons.wikimedia.org/wiki/File%3AScrabble_game_in_progress.jpg">Image From Creative Commons</a><br/>
+	<img src="Scrabble_game_in_progress.jpg" alt="scrabble image" />
+	<form class="form_prop" method='POST' action='index.php'>
 
 	<!--	<input type='text' name='contestant0'><br>
 		<input type='text' name='contestant1'><br>
