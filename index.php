@@ -20,7 +20,8 @@ ini_set('display_errors', 1);
 		<input type='text' name='contestant2'><br>
 		<input type='text' name='contestant3'><br>
 
-		<input type="checkbox" name="special_char" value="special_char" />Special character<br />
+		Number of words: <input type="number" size="6" name="word_count" min="1" max="5" value="3"><br/>
+		Add Special character:<input type="checkbox" name="special_char" value="TRUE" /><br />
 
 		<input type='submit' value='Pick the winners!'>
 

@@ -3,6 +3,7 @@
 Initiate a blank contestants array
 We'll be filling this up with data from the $_POST array
 */
+var_dump($_POST);
 $contestants = Array();
 
 /*
@@ -71,10 +72,37 @@ $word_list = Array("able",
 "car",
 "certain",
 "change");
+
+$word_count = intval($_POST['word_count']);
 $num_words = count($word_list);
 $char_list = Array('_', "@", "!", "%");
 $num_chars = count($char_list);
+$password_array = Array();
 
-$password_string = $word_list[rand(0, $num_words-1)].$char_list[rand(0, $num_chars-1)].$word_list[rand(0, $num_words-1)];
+//Generate an array for the number of words we need
+for ($i = 0; $i < $word_count; $i++)
+{
+	$password_array[$i] = $word_list[rand(0, $num_words-1)];
+}
+$password_string = "";
+
+//Concatenate the words with an '_' in between
+foreach($password_array as $key => $value)
+{
+	$password_string=$password_string.$value;
+	if ($key != ($word_count - 1))
+	{
+			$password_string=$password_string.'_';
+	}
+	else {
+		# if special char is needed concatenate that also
+		if (isset($_POST['special_char']) && $_POST['special_char'] == 'TRUE')
+		{
+				$password_string=$password_string.'_'.$char_list[rand(0, $num_chars-1)];
+		}
+	}
+}
+
+//$password_string = $word_list[rand(0, $num_words-1)].$char_list[rand(0, $num_chars-1)].$word_list[rand(0, $num_words-1)];
 
 ?>
